@@ -1,0 +1,11 @@
+Django
+imutils
+python-dotenv
+pandas
+requests
+requests-oauthlib
+whitenoise==5.3.0
+numpy
+matplotlib
+pandas_ta
+pytz

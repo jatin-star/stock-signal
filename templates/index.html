@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<header>
+    <nav>
+      <div class="container">
+        <h1 class="logo">Nonfic Books</h1>
+          <button class="toggle-nav" aria-label="Open navigation"></button>
+          <ul class="nav-links">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'books' %}">Stock Data</a></li>
+          <li><a href="{% url 'analytics' %}">Plot</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+  <div class="home-banner">
+    <div class="banner">
+<div class="banner-text">
+    <h1 class="banner-heading">Discover the World of Stock Market Analysis</h1>
+    <h4 class="banner-subheading"></h4>
+</div>
+
+    </div>
+    <div class="banner-image">
+        <img class="promo-image" src="https://images.contentstack.io/v3/assets/blt3d151d94546d0edd/blta0ddc4ade376f2e0/655683f7647c2865014e961c/LibbyDevices2023.png" alt="">
+    </div>
+</div>
+  </section>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

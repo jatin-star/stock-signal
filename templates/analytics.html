@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-fiction Books</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .dataframe-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .dataframe {
+            width: 100%;
+            max-width: 80%;
+        }
+        .dataframe table {
+            margin: 0 auto;
+        }
+        .dataframe th, .dataframe td {
+            text-align: center;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+        .plot-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .plot-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+<header>
+    <nav>
+      <div class="container">
+        <h1 class="logo">Nonfic Books</h1>
+          <button class="toggle-nav" aria-label="Open navigation"></button>
+          <ul class="nav-links">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'books' %}">Stock Data</a></li>
+          <li><a href="{% url 'analytics' %}">Plot</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+<section class="analytics">
+    <div class="container">
+        <form method="post" action="{% url 'get_stock_analysis' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="stock_name">Enter Stock Name:</label>
+                <textarea class="form-control" id="stock_name" name="stock_name" rows="1" placeholder="Stock Name">{{ stock_name|default_if_none:"" }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Stock Data</button>
+        </form>
+
+        {% if error_message %}
+            <div class="error">{{ error_message }}</div>
+        {% endif %}
+
+        {% if df_html %}
+            <div class="dataframe-container">
+                <div class="dataframe">
+                    {{ df_html|safe }}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if plot_image %}
+            <div class="plot-container">
+                <img src="data:image/png;base64,{{ plot_image }}" alt="Stock Analysis Plot">
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

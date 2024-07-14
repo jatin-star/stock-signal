@@ -1,0 +1,200 @@
+/* Reset default margin and padding */
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "FreightTextPro", Georgia, serif;
+    line-height: 1.5;
+}
+
+nav .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nav-links li a{
+    color: #2270a1;
+    text-decoration:none;
+}
+
+header{
+color: #2270a1;
+}
+
+.toggle-nav{
+    display:none;
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+}
+
+.toggle-nav {
+    background: url('../img/OD%20menu%20icon.jpg') no-repeat center center;
+    background-size: cover;
+    width: 50px;
+    height: 26px; 
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 991px) {
+
+    header{
+        margin-top:10%;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container .new-nav {
+        display: contents;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .toggle-nav {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+
+nav .container{
+    flex-grow: 1;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav .container nav-links{
+    padding-left: 10rem;
+    margin: 10rem;
+    margin-left: auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style-type: none;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 3rem;
+}
+
+.nav-links li:hover {
+  padding: auto;
+  transition: 0.6s ease;
+  font-size: 1.5rem;
+}
+
+/* index */
+
+.home-banner {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    background: linear-gradient(12deg,#f5f3f1 -66.46%,rgba(245,243,241,0) 41.72%)
+}
+
+.banner-heading {
+    font-size: 50px;
+    font-weight: 400;
+    color: #0a2240;
+    margin-top: 54px
+}
+
+.banner {
+    max-width: 1225px;
+    padding-right: 68px
+}
+
+.banner-subheading {
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 0;
+    color: #0a2240;
+    width: 522px
+}
+
+
+.banner-text {
+    max-width: 588px
+}
+
+.home-page-banner-apps-container {
+    margin: auto;
+    max-width: 1225px;
+}
+
+.promo-image {
+    width: 512px;
+    transform: translate(10px,0)
+}
+
+@media only screen and (max-width: 700px) {
+    .promo-image{
+        width: 80%;
+    }
+
+    .mobile-banner {
+        display:block;
+        padding: 24px;
+        margin-bottom: 40px;
+        background: linear-gradient(12deg,#f5f3f1 -66.46%,rgba(245,243,241,0) 41.72%)
+    }
+
+    .home-banner{
+        display: block;
+    }
+}

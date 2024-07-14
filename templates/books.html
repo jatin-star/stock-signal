@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-fiction Books</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <nav>
+      <div class="container">
+        <h1 class="logo">Nonfic Books</h1>
+          <button class="toggle-nav" aria-label="Open navigation"></button>
+          <ul class="nav-links">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'books' %}">Stock Data</a></li>
+          <li><a href="{% url 'analytics' %}">Plot</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+<section class="books">
+ <!-- Render the DataFrame as an HTML table -->
+    <div class="container dataframe-container">
+    <div>
+        <h2>Buy</h2>
+            {{ buy_df_html|safe }}
+        </div>
+    <div>
+            <h2>Sell</h2>
+            {{ sell_df_html|safe }}
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
+
+

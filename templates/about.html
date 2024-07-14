@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-fiction Books</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-/RDZDEIfg4B+nItK9mdwpMwLHxLd+B2bMsx62l00C46m3SPDKE0W4TGM3Te5MLBx0FrQxGiyIySZJti7lMjLGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <style>
+        .about_section_container {
+            max-width: 60%;
+            margin: auto;
+            text-align: center;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .features {
+            margin-bottom: 20px;
+        }
+        .features ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .features li {
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+      <div class="container">
+        <h1 class="logo">Nonfic Books</h1>
+          <button class="toggle-nav" aria-label="Open navigation"></button>
+          <ul class="nav-links">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'books' %}">Stock Data</a></li>
+          <li><a href="{% url 'analytics' %}">Plot</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+<section class="about-section">
+     <div class="about_section_container">
+        <header>
+            <h3>Welcome to Our Stock Analysis Platform</h3>
+        </header>
+
+        <section class="intro">
+            <p>Welcome to our stock analysis website, here you can make smarter investment decisions using powerful indicators. We track buy and sell signals for 50 top stocks, providing clear insights similar to what you find on Moneycontrol.</p>
+        </section>
+
+        <section class="features">
+            <div>
+                <p>Easily understand when to buy or sell with clear signals for 50 major stocks. See the profit factor and percentage profit for each, making it simple to evaluate investment potential.</p>
+            </div>
+            <div>
+                <p>Just enter any stock name to get instant analysis and charts showing buy and sell signals. Explore and evaluate stocks quickly and effectively for better investment choices.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Mangloooo. All rights reserved.</p>
+        </footer>
+    </div>
+
+</section>
+
+
+<script src="{% static 'js/index.js' %}"></script>
+
+</body>
+</html>
