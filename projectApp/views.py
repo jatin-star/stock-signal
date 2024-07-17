@@ -50,7 +50,6 @@ def get_current_time():
     current_time_ist = current_time_utc.replace(tzinfo=pytz.utc).astimezone(ist)
     return current_time_ist.strftime("%H:%M:%S")
 
-import yfinance as yf
 from datetime import datetime, timedelta
 
 def data_fetch(stock_name):
